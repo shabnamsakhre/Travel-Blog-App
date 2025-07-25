@@ -1,0 +1,56 @@
+/* Define the keyframe animation for the continuous glare effect */
+@keyframes continuous-glare {
+  0% {
+    /* Start the glare completely off-screen from one corner.
+       -200% ensures it's fully out of view, especially with large glareSize. */
+    background-position: -200% -200%;
+  }
+  100% {
+    /* End the glare completely off-screen from the opposite corner,
+       completing the sweep across the element. */
+    background-position: 200% 200%;
+  }
+}
+.glare-hover {
+  /* Dimensions and basic styling from props */
+  width: var(--gh-width);
+  height: var(--gh-height);
+  border-radius: 14rem;
+  /* Essential for the glare effect */
+  overflow: hidden; /* Hides the glare when it's outside the element boundaries */
+  position: relative; /* Establishes a positioning context for the ::before pseudo-element */
+  /* For centering content inside the glare hover area */
+  display: grid;
+  place-items: center;
+  /* Optional: Smooth transition for hover effects if you add any later (e.g., scale) */
+  transition: all 0.2s ease-in-out;
+}
+
+/* The pseudo-element for the glare effect */
+.glare-hover::before {
+  content: ""; /* Required for pseudo-elements */
+  position: absolute; /* Positions the glare relative to .glare-hover */
+  inset: 0; /* Shorthand for top: 0; right: 0; bottom: 0; left: 0; - makes it cover the parent */
+  /* Glare gradient definition */
+  background: linear-gradient(var(--gh-angle), hsla(0, 0%, 0%, 0) 60%, var(--gh-rgba) 70%, hsla(0, 0%, 0%, 0) 100%);
+  /* Size of the gradient itself, allowing it to be larger than the container
+     so it looks like a "sweep" rather than just a static gradient changing position. */
+  background-size: var(--gh-size) var(--gh-size);
+  background-repeat: no-repeat; /* Crucial: ensures only one instance of the background gradient */
+  /* Apply the animation:
+     - continuous-glare: the name of our @keyframes
+     - var(--gh-duration): the time for one complete sweep (from JS prop)
+     - linear: ensures constant speed throughout the animation
+     - infinite: makes the animation loop endlessly
+  */
+  animation: continuous-glare var(--gh-duration) linear infinite;
+  /* --- The 2-second initial delay --- */
+  animation-delay: 1s; /* Wait 2 seconds before the first animation cycle begins */
+}
+
+/* Optional: Add a subtle hover effect if desired, even with continuous glare */
+.glare-hover:hover {
+  cursor: pointer; /* Indicates it's interactive */
+  /* transform: scale(1.02); /* Example: slight scale on hover */
+  /* box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Example: subtle glow on hover */
+}/*# sourceMappingURL=GlareHover.css.map */

@@ -1,0 +1,42 @@
+/* Define the keyframe animation for the HR */
+@keyframes centerGrowFade {
+  0% {
+    opacity: 0; /* Start completely transparent */
+    transform: scaleX(0); /* Start with no horizontal width (scaled to 0) */
+  }
+  25% {
+    opacity: 1; /* Grow to fully opaque */
+    transform: scaleX(1); /* Grow to its full defined width */
+  }
+  75% {
+    opacity: 1; /* Remain fully opaque for a duration */
+    transform: scaleX(1); /* Remain at full width */
+  }
+  100% {
+    opacity: 0; /* Fade back to transparent */
+    transform: scaleX(0); /* Shrink back to no width */
+  }
+}
+
+.animated-hr {
+  height: var(--hr-height); /* Thickness, e.g., 3px */
+  width: var(--hr-max-width); /* Max width it will grow to, e.g., 80% */
+  margin: var(--hr-margin); /* Centers horizontally with vertical spacing */
+
+  /* Multiple colors using a linear gradient */
+  background: var(--hr-gradient);
+  border: none; /* Remove default border for div/hr like styling */
+  border-radius: 5px; /* Optional: slightly rounded ends */
+
+  /* Crucial for center growth: The point from which scaling originates */
+  transform-origin: center;
+
+  /* Initial state before animation starts (ensures it's invisible if animation delays) */
+  opacity: 0;
+  transform: scaleX(0);
+
+  /* Apply the animation */
+  animation: centerGrowFade var(--hr-animation-duration)
+    /* Duration from prop */ ease-in-out
+    /* Smooth start and end for growth/fade */ infinite; /* Loops continuously */
+}

@@ -1,0 +1,26 @@
+.read-blog {
+  width: 100%;
+  margin: 4rem 0;
+}
+.read-blog .custom-class {
+  margin: 0 22rem;
+}
+.read-blog .card {
+  width: 100%;
+  height: 60vh;
+  background: white;
+}
+.read-blog .card h1 {
+  color: black;
+  position: sticky;
+  top: 0;
+}
+.read-blog .card ::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .read-blog .custom-class {
+    margin: 0;
+  }
+}/*# sourceMappingURL=read-blog.css.map */

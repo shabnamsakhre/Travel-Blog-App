@@ -1,0 +1,36 @@
+.home-container {
+  width: 100%;
+}
+.home-container .bg-image {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.home-container .bg-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.5;
+  position: absolute;
+}
+.home-container .bg-image .header-text {
+  font-size: 4rem;
+  font-weight: 900;
+}
+.home-container .bg-image p {
+  font-size: 1.3rem;
+}
+
+@media (max-width: 720px) {
+  .home-container .bg-image {
+    padding: 1rem;
+  }
+  .home-container .bg-image .header-text {
+    font-size: 2.8rem;
+  }
+}/*# sourceMappingURL=home.css.map */

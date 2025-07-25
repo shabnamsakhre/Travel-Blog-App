@@ -1,0 +1,71 @@
+.list {
+  position: relative; /* Container for absolutely positioned items */
+  width: 100%;
+  padding: 0 2rem;
+}
+.list .item-wrapper {
+  position: absolute; /* Essential for GSAP x, y, width, height animations */
+  overflow: hidden; /* To ensure content respects border-radius if applied */
+  border-radius: 8px; /* Example border-radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Example shadow */
+  cursor: pointer;
+  box-sizing: border-box; /* Include padding/border in width/height */
+}
+.list .item-wrapper .item-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative; /* For the overlay */
+  border-radius: 8px; /* Match parent wrapper */
+  margin: 0.6rem;
+}
+.list .item-wrapper .item-img :hover {
+  filter: brightness(0.9);
+}
+
+.item-wrapper .item-img:hover {
+  /* Apply hover directly to item-img for brightness */
+  filter: brightness(0.9);
+}
+
+/* --- NEW OVERLAY STYLES --- */
+.item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+  border-radius: 8px; /* Match image/wrapper border-radius */
+  display: flex; /* Use flexbox to center content */
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Start hidden */
+  visibility: hidden; /* Also hide from screen readers when not visible */
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; /* Smooth transition */
+  pointer-events: none; /* Allows clicks to pass through to the image when overlay is hidden */
+  box-sizing: border-box; /* Ensures padding/border is included in width/height */
+  padding: 10px; /* Some padding around the text */
+}
+
+.item-overlay h3 {
+  color: #fff; /* White text color */
+  font-size: 1.2rem; /* Adjust font size as needed */
+  text-align: center;
+  margin: 0; /* Remove default margin */
+  padding: 0 10px; /* Inner padding for text */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Optional: text shadow for readability */
+  word-break: break-word; /* Ensures long titles wrap */
+  overflow: hidden; /* Hides overflow if text is too long */
+  display: -webkit-box;
+  --webkit-line-clamp: 3; /* Limit text to 3 lines */
+  -webkit-box-orient: vertical;
+}
+
+/* Show the overlay on item-wrapper hover */
+.item-wrapper:hover .item-overlay {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto; /* Allow interaction with overlay content if needed */
+}/*# sourceMappingURL=Masonry.css.map */

@@ -1,0 +1,50 @@
+.footer {
+  position: relative;
+}
+.footer .main {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1.5rem 0;
+}
+.footer .main .logo {
+  width: 13rem;
+}
+.footer .main .logo img {
+  width: 100%;
+}
+.footer .main .links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+.footer .main .links h1 {
+  font-size: 3rem;
+}
+.footer .main .links .icons {
+  display: flex;
+  gap: 1rem;
+}
+.footer .main .links .icons img {
+  width: 2.6rem;
+}
+.footer p {
+  position: absolute;
+  bottom: -3rem;
+  left: 4rem;
+}
+
+@media (max-width: 720px) {
+  .footer {
+    margin: 4rem 0;
+  }
+  .footer .main {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer p {
+    text-align: center;
+    left: 0;
+    position: relative;
+  }
+}/*# sourceMappingURL=footer.css.map */

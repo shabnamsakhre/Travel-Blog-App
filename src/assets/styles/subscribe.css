@@ -1,0 +1,68 @@
+.subscribe {
+  width: 100%;
+  padding: 1rem 4rem;
+  background-color: #e17564;
+  margin: 5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.subscribe .profile {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+.subscribe .profile img {
+  width: 30%;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transform: scale(1.4);
+  border-radius: 50%;
+}
+.subscribe form {
+  width: 40%;
+}
+.subscribe form input,
+.subscribe form button {
+  width: 100%;
+  padding: 0.5rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+}
+.subscribe form button {
+  padding: 1rem 2rem;
+  font-weight: 600;
+  background-color: #872341;
+  color: white;
+  cursor: pointer;
+}
+.subscribe form button:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 720px) {
+  .subscribe {
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+  }
+  .subscribe .profile {
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .subscribe .profile img {
+    width: 50%;
+    transform: none;
+  }
+  .subscribe form {
+    width: 100%;
+  }
+}/*# sourceMappingURL=subscribe.css.map */

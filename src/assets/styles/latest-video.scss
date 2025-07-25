@@ -1,0 +1,13 @@
+.latest-video {
+  .custom-class {
+    margin: 0 23rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .latest-video {
+    .custom-class {
+      margin: 0 0 1rem 0;
+    }
+  }
+}

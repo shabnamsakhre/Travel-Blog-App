@@ -1,0 +1,62 @@
+.about {
+  width: 100%;
+  height: 100vh;
+  margin-bottom: 5rem;
+}
+.about .about-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 4rem;
+}
+.about .about-container .img {
+  width: 40%;
+  height: 100%;
+  padding: 0 4rem;
+}
+.about .about-container .img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 14rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.about .about-container .content {
+  width: 60%;
+}
+.about .about-container .content h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+.about .about-container .content p {
+  margin-bottom: 1rem;
+}
+.about .footer {
+  margin-top: 4rem;
+}
+.about .footer .main {
+  background-color: #be3144;
+}
+
+@media (max-width: 720px) {
+  .about {
+    width: 100%;
+    height: 100%;
+  }
+  .about .about-container {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  .about .about-container .img {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+  .about .about-container .content {
+    width: 100%;
+    text-align: justify;
+  }
+  .about .about-container .content h1 {
+    margin-bottom: 1rem;
+  }
+}/*# sourceMappingURL=about.css.map */

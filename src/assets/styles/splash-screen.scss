@@ -1,0 +1,16 @@
+.splash-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .splash-image {
+    width: 50%;
+    transition: transform 5s ease-in-out;
+  }
+
+  .splash-image.zoom {
+    transform: scale(2); /* zoom effect */
+  }
+}

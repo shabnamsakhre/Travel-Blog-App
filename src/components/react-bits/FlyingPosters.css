@@ -1,0 +1,13 @@
+.posters-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  right: 0;
+}
+.posters-container .posters-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=FlyingPosters.css.map */

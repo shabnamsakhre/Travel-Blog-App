@@ -1,0 +1,322 @@
+.blog-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  .blog-content {
+    width: 65%;
+    padding: 2rem 0 2rem 4rem;
+
+    div {
+      h1 {
+        font-size: 3rem;
+        color: #e17564;
+      }
+
+      .author {
+        font-size: 0.8rem;
+        margin: -5px 0 2rem 0;
+        color: gray;
+      }
+
+      .summary {
+        margin-bottom: 3rem;
+      }
+
+      .sections {
+        margin-bottom: 3rem;
+
+        h2 {
+          margin-bottom: 0.8rem;
+          color: #be3144;
+        }
+
+        p {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+
+  .blog-gallery {
+    width: 35%;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+  }
+}
+
+/* Existing styles */
+.gallery-container {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-gradient {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 48px;
+  z-index: 10;
+}
+
+.gallery-gradient-left {
+  left: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, #060010 100%);
+}
+
+.gallery-gradient-right {
+  right: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, #060010 100%);
+}
+
+.gallery-content {
+  display: flex;
+  height: 80%;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  width: 100%;
+}
+
+.gallery-track {
+  display: flex;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+  transform-style: preserve-3d;
+  width: 100%;
+}
+
+.gallery-item {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+  padding: 8%;
+  backface-visibility: hidden;
+  box-sizing: border-box;
+  cursor: pointer; /* Indicate clickable */
+  gap: 0.3rem; /* Space between image and title */
+}
+
+.gallery-thumbnail-wrapper {
+  pointer-events: none; /* Allow clicks to pass to parent */
+  width: 300px; /* Base width for thumbnail wrapper */
+  height: 150px; /* 16:9 aspect ratio for YouTube thumbnails (300 / 16 * 9) */
+  border-radius: 15px;
+  border: 3px solid #fff;
+  background-size: cover;
+  background-position: center;
+  transition: 0.3s ease;
+  overflow: hidden; /* Ensure border-radius applies to background image */
+}
+
+.gallery-item h5 {
+  color: #fff; /* White text for titles */
+  font-size: 0.5rem;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 0.5rem;
+  pointer-events: none; /* Do not block clicks */
+  white-space: nowrap; /* Prevent title from wrapping */
+  overflow: hidden; /* Hide overflow if title is too long */
+  text-overflow: ellipsis; /* Add ellipsis for long titles */
+  max-width: 100%; /* Constrain title width */
+}
+
+.gallery-item:hover .gallery-thumbnail-wrapper {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .gallery-item {
+    padding: 6%;
+  }
+  .gallery-thumbnail-wrapper {
+    width: 220px; /* Smaller base width for mobile */
+    height: 123.75px; /* Maintain 16:9 aspect ratio */
+  }
+  .gallery-item h5 {
+    font-size: 0.9rem;
+  }
+}
+
+/* Modal Styles */
+.video-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Darker overlay for video */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.video-modal-content {
+  background: #000; /* Black background for video modal */
+  padding: 15px;
+  border-radius: 10px;
+  // max-width: 90%;
+  // max-height: 90%;
+  width: 80%;
+  overflow: hidden; /* Hide scrollbars if content overflows */
+  position: relative;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  animation: slideIn 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-modal-content h3 {
+  color: #fff;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1.5rem;
+  max-width: 90%; /* Constrain title width */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.video-modal-iframe-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio (height / width = 9 / 16 = 0.5625) */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.video-modal-iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 2.5em; /* Larger close button */
+  color: #fff; /* White close button */
+  cursor: pointer;
+  padding: 5px;
+  line-height: 1;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.video-modal-close-button:hover {
+  color: #ccc;
+}
+
+/* Animations (re-used from previous examples) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// @media (max-width: 720px) {
+//   .blog-container {
+//     flex-direction: column;
+//     padding: 2rem;
+
+//     .blog-content {
+//       width: 100%;
+//       height: 60%;
+//       padding: 0;
+//       overflow: hidden;
+
+//       div {
+//         width: 100%;
+//         height: 100%;
+//       }
+//     }
+
+//     .blog-gallery {
+//       width: 100%;
+//       height: 40%;
+//       bottom: 0;
+//     }
+//   }
+// }
+
+@media (max-width: 720px) {
+  .blog-container {
+    flex-direction: column; /* Stacks items vertically */
+    height: auto; /* Allow height to adjust based on content */
+    /* Remove fixed padding here if you want content to handle its own padding */
+    padding: 1rem; /* Add some overall padding for smaller screens */
+
+    .blog-content {
+      width: 100%; /* Take full width */
+      height: 60vh; /* **NEW**: 60% of viewport height */
+      padding: 0; /* Remove internal padding here, content inside can add its own */
+      overflow-y: auto; /* **NEW**: Allows scrolling for long blog content */
+      overflow-x: hidden; /* Prevent horizontal scroll */
+      scrollbar-width: none;
+
+      div {
+        /* This div seems to wrap the blog content, ensure it allows its content to scroll */
+        width: 100%;
+        /* Remove fixed height here, let content dictate its height */
+        height: auto;
+        padding-right: 1rem;
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        .sections {
+          h2 {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+
+    .blog-gallery {
+      width: 100%; /* Take full width */
+      height: 40vh; /* **NEW**: 40% of viewport height */
+      position: relative; /* Change from fixed to relative */
+      /* Remove bottom/right if using relative positioning */
+      bottom: auto;
+      right: auto;
+    }
+  }
+}

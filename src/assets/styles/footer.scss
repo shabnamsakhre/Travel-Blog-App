@@ -1,0 +1,60 @@
+.footer {
+  position: relative;
+
+  .main {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1.5rem 0;
+
+    .logo {
+      width: 13rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      .icons {
+        display: flex;
+        gap: 1rem;
+
+        img {
+          width: 2.6rem;
+        }
+      }
+    }
+  }
+
+  p {
+    position: absolute;
+    bottom: -3rem;
+    left: 4rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .footer {
+    margin: 4rem 0;
+
+    .main {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    p {
+      text-align: center;
+      left: 0;
+      position: relative;
+    }
+  }
+}
