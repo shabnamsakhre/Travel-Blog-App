@@ -1,5 +1,5 @@
 import "../assets/styles/contact.css";
-import AnimatedHr from "../components/my-animation/AnimatedHR";
+import AnimatedHr from "../components/animations/AnimatedHR";
 import GlitchText from "../components/react-bits/GlitchText";
 import Navbar from "../components/Navbar";
 import Subscribe from "../components/Subscribe";

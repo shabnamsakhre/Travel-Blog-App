@@ -1,4 +1,3 @@
-import React from "react";
 import "./AnimatedHr.css"; // Link to your CSS file
 
 const AnimatedHr = ({
