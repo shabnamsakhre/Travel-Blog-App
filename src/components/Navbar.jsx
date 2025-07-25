@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { VscCallOutgoing, VscHome, VscInfo } from "react-icons/vsc";
+import { VscAccount, VscCallOutgoing, VscHome, VscInfo } from "react-icons/vsc";
 import Dock from "./react-bits/Dock";
 
 const Navbar = () => {
@@ -20,6 +20,11 @@ const Navbar = () => {
       icon: <VscCallOutgoing size={18} />,
       label: "Contact",
       onClick: () => navigate("/contact"),
+    },
+    {
+      icon: <VscAccount size={18} />,
+      label: "Login",
+      onClick: () => navigate("/login"),
     },
   ];
 

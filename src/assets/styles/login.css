@@ -1,0 +1,111 @@
+.login {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(to right bottom, #d28d88, #285493);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+}
+.login .back {
+  position: absolute;
+  top: 3rem;
+  left: 4rem;
+  font-size: 2rem;
+  background-color: white;
+  color: #00264d;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.login h1 {
+  font-size: 1.8rem;
+}
+.login .main {
+  width: 30rem;
+}
+.login .main .form {
+  background-color: #c5bacb;
+  padding: 5rem 3rem 3rem 3rem;
+  border-radius: 2rem;
+  position: relative;
+  box-shadow: 4px 4px 15px 0 #285493;
+}
+.login .main .form .icon {
+  background-color: #00264d;
+  position: absolute;
+  top: -4rem;
+  left: 39%;
+  padding: 1rem;
+  border-radius: 50%;
+}
+.login .main .form .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.login .main .form .container div {
+  width: 100%;
+  display: flex;
+}
+.login .main .form .container div i {
+  background-color: #00264d;
+  padding: 0.8rem;
+  font-size: 1.5rem;
+}
+.login .main .form .container div input {
+  width: 100%;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  background-color: #375172;
+  color: white;
+}
+.login .main .form .container p {
+  font-size: 0.9rem;
+  text-align: right;
+  color: #285493;
+  margin-top: 1.5rem;
+}
+.login .main .btn {
+  width: 80%;
+  background-color: #c5bacb;
+  margin-left: 10%;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  overflow: hidden;
+}
+.login .main .btn button {
+  font-size: 1.2rem;
+  font-weight: 700;
+  width: 100%;
+  padding: 0.8rem;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+.login .main .btn button:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 720px) {
+  .login {
+    padding: 2rem;
+  }
+  .login .back {
+    top: 2rem;
+    left: 2rem;
+  }
+  .login .main {
+    width: 100%;
+  }
+  .login .main .form {
+    padding: 6rem 1rem 3rem 1rem;
+  }
+  .login .main .form .icon {
+    padding: 0.8rem;
+    left: 37%;
+  }
+}/*# sourceMappingURL=login.css.map */

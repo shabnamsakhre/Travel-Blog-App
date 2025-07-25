@@ -6,6 +6,7 @@ import Blog from "../pages/Blog";
 import PageNotFound from "../pages/PageNotFound";
 import { useEffect, useState } from "react";
 import SplashScreen from "../pages/SplashScreen";
+import Login from "../pages/Login";
 
 const MainRoute = () => {
   const [showSplash, setShowSplash] = useState(true);
@@ -23,6 +24,8 @@ const MainRoute = () => {
       <Route path="/contact" element={<Contact />} />
 
       <Route path="/blog/:id" element={<Blog />} />
+
+      <Route path="/login" element={<Login />} />
 
       {/* Page Not Found */}
       <Route path="*" element={<PageNotFound />} />
