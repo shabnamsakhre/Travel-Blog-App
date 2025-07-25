@@ -1,5 +1,4 @@
 import "../assets/styles/contact.css";
-import AnimatedHr from "../components/animations/AnimatedHR";
 import GlitchText from "../components/react-bits/GlitchText";
 import Navbar from "../components/Navbar";
 import Subscribe from "../components/Subscribe";
@@ -42,25 +41,7 @@ const Contact = () => {
           outside parties
         </p>
 
-        <AnimatedHr
-          height="5px"
-          maxWidth="50%"
-          animationDuration="6s"
-          gradientColors={[
-            // "#021526",
-            // "#872341",
-            // "#be3144",
-            // "#e17564",
-            "#4CAF50",
-            "#FFC107",
-            "#2196F3",
-            "#4CAF50",
-          ]} /* Green, Yellow, Blue */
-          margin="60px auto"
-          style={{
-            filter: "brightness(1.2)",
-          }}
-        />
+        <hr />
 
         <h2>Work with me</h2>
         <p className="content-1">
@@ -70,21 +51,7 @@ const Contact = () => {
           brands and for readership numbers.
         </p>
 
-        <AnimatedHr
-          height="5px"
-          maxWidth="50%"
-          animationDuration="6s"
-          gradientColors={[
-            "#4CAF50",
-            "#2196F3",
-            "#FFC107",
-            "#4CAF50",
-          ]} /* Green, Yellow, Blue */
-          margin="60px auto"
-          style={{
-            filter: "brightness(1.2)",
-          }}
-        />
+        <hr />
 
         <h2>If you would like to write for BMTM</h2>
         <p className="content-1">

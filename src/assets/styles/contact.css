@@ -13,6 +13,10 @@
 .contact .main {
   padding: 2rem 4rem;
 }
+.contact .main hr {
+  width: 50%;
+  margin-left: 25%;
+}
 .contact .main .heading {
   width: 100%;
   display: flex;
